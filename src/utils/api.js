@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Matches server PORT in `.env` (default 5000)
+  baseURL: `${import.meta.env.VITE_API_URL}`,
 });
+
 
 // Interceptor: Attach Token to every request automatically
 api.interceptors.request.use((config) => {
